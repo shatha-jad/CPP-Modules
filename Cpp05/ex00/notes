@@ -1,0 +1,18 @@
+The assignment requires implementing the Bureaucrat class, which represents a bureaucrat in a bureaucratic system. The Bureaucrat class has the following attributes and functionalities:
+
+Attributes:
+- A constant name.
+- A grade ranging from 1 (highest possible grade) to 150 (lowest possible grade).
+
+Functionality:
+- The Bureaucrat class should throw exceptions if an attempt is made to instantiate it with an invalid grade. The exceptions to be thrown are `Bureaucrat::GradeTooHighException` and `Bureaucrat::GradeTooLowException`.
+- Getters: The class should provide getter functions to access the name and grade attributes. These functions are `getName()` and `getGrade()`.
+- Grade Modification: The class should have member functions to increment and decrement the bureaucrat's grade. If the grade goes out of the valid range (1 to 150), the same exceptions mentioned above should be thrown.
+
+The exceptions thrown by the Bureaucrat class should be catchable using try and catch blocks. The code should handle the exceptions appropriately within the catch block.
+
+Additionally, an overload of the insertion (<<) operator should be implemented to print the name and grade of the bureaucrat in the format: `<name>, bureaucrat grade <grade>`.
+
+You need to adhere to the Orthodox Canonical Form while implementing the Bureaucrat class. The provided files should include the necessary headers, a Makefile for compilation, and a main.cpp file to test the functionality of the Bureaucrat class. You are also required to write additional tests to validate the behavior of the class.
+
+Remember to implement the Bureaucrat class and any necessary exceptions in accordance with the Orthodox Canonical Form guidelines.
