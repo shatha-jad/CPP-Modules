@@ -3,7 +3,7 @@
 # define SPAN_HPP
 
 #include <iostream>
-#include <set>
+#include <vector>
 #include <ctime>
 #include <algorithm>
 
@@ -11,7 +11,7 @@ class Span
 {
 	private:
 		unsigned int		_max;
-		std::multiset<int>	_data;
+		std::vector<int>	_data;
 
 		class	ContainerEmptyException : public std::exception
 		{

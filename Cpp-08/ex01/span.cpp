@@ -11,8 +11,8 @@ Span & Span::operator=(const Span &rhs)
 {
 	if (this != &rhs)
 	{
-		this->_max = rhs._max;
-		this->_data = rhs._data;
+		_max = rhs._max;
+		_data = rhs._data;
 	}
 	return *this;
 }
@@ -23,24 +23,21 @@ void Span::addNumber(int num)
 {
 	if (_data.size() >= _max)
 		throw ContainerMaxException();
-	_data.insert(num);
+	_data.push_back(num);
 }
 
 int Span::shortestSpan()
 {
-	if (_data.size() <= 1)
+	if (_data.size() < 1)
 		throw ContainerEmptyException();
 
-	std::multiset<int>::iterator next = _data.begin();
-	std::multiset<int>::iterator prev = next++;
 
-	int minSpan = *next - *prev;
-	while (next != _data.end())
+	std::sort(this->_data.begin(), this->_data.end());
+	int minSpan = this->_data[1] - this->_data[0];
+	for (unsigned int i = 1; i < this->_data.size() - 1; i++)
 	{
-		if (*next - *prev < minSpan)
-			minSpan = *next - *prev;
-		prev++;
-		next++;
+		if (this->_data[i + 1] - this->_data[i] < minSpan)
+			minSpan = this->_data[i + 1] - this->_data[i];
 	}
 	return minSpan;
 }
@@ -57,7 +54,7 @@ void Span::addMoreNum(int size)
 {
 	for (int i = 0; i < size && _data.size() < _max; i++)
 	{
-		_data.insert(rand() % 100);
+		_data.push_back(rand() % 100);
 	}
 }
 
